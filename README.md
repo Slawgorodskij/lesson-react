@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+Урок 1. Знакомство с ReactJS. Первые компоненты
+1. Развернуть новый проект с использованием create-react-app.
+2. Создать компонент Message, отображающий переданный ему
+   пропсом текст.
+3. Изменить компонент App так, чтобы тот рендерил Message и
+   передавал ему пропсом текст (константу).
+4. Стилизовать компоненты через css (при желании можно
+   использовать less или sass).
+5. Установить расширение React Devtools.
+6. Читаем документацию по react
+ДОПОЛНЕНИЕ
+1. Прочитать про key для массивов, и исправить ошибку в консоли
+2. Попробовать создать различные методы и обработчики для компонентов
+3. Изменять состояние в функциональных компонентах и классовых компонентах
+4. Подключать вебхук для песочницы
+5. Деплоим проект на gh pages
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Урок 2. Жизненный цикл компонента
+1. Добавить в компонент App поле стейта messageList. В нем хранить массив объектов - сообщений (объект должен содержать, как минимум, поля text и author). Начальное значение - пустой массив. 
+2. Рендерить список сообщений через map. 
+3. Добавить и стилизовать форму - поле для ввода текста и кнопка для отправки сообщения. При отправке сообщения обновление UI должно происходить за счет обновления стейта App. 
+4. Добавить в App useEffect - на каждое отправленное пользователем сообщение должен отвечать робот (должно автоматически отправляться сообщение с фиксированным текстом) - для этого необходимо проверять автора последнего сообщения.
+4. * Сделать задержку ответа робота - сообщение от него должно отправляться через некоторый промежуток времени после отправки сообщения пользователя (напр., 1.5 сек).
+ДОПОЛНЕНИЕ
+1. Изучаем методы жизненого цикла в функциональных и классовых компонентах 
+2. Настраиваем webpack
+3. Настриваем eslint 
+4. Настраиваем husky
+5. Настраиваем storybook 
+6. Пишет для каждого компонента свою story 
+7. Выкладываем сторибук на firebase или aws 
+8. Добавляем вебхук для линтера
 
-## Available Scripts
+Урок 3. Тестирование и оптимизация приложений на React
+1. Написать тесты для бота с прошлого урока 
+2. Установить Lighthouse. 
+3. Сгенерировать отчет. 
+4. Проанализировать и исправить ошибки (воспользуйтесь советами Lighthouse, указанными в отчете). 
+5. Провести профайлинг приложения. Найти (если есть) излишние рендеры. Исправить их с помощью чистых компонентов.
+ДОПОЛНЕНИЕ
+1.Для каждого компонента пишем свой storybook 
+6. Запускаем loki 
+7. jest coverage на gh pages 
+8. Добавить вебхук для lint + jest
 
-In the project directory, you can run:
+Урок 4. Virtual DOM. Material UI. PropTypes
+1. Установить material-ui. Переделать форму с использованием компонентов из material-ui. 
+2. Добавить автофокус на текстовое поле при открытии страницы и после отправки сообщения. 
+3. Исправить ошибку в консоли, связанную с отсутствием key у сообщений. 
+4. Добавить “массив чатов” - массив объектов с полями name и id (в качестве id можно выбрать любую уникальную строку). Добавить список чатов - он должен отображаться слева от списка сообщений. Используйте List и ListItem из material-ui (список пока не несет никакой функциональности).
+4. * Добавить тему material-ui.
+ДОПОЛНЕНИЕ
+1. Переписать весь проект на typescript 
+2. Билд сторибука на хроматик 
+3. Тесты 
+4. coverage на firebase
 
-### `npm start`
+Урок 5. Children. Роутинг в React
+1. Повторить всё, что сделано на уроке 
+2. Добавить возможность удаления чатов.
+ДОПОЛНЕНИЕ
+1. Тесты (memory router)
+2. Storybook with chromatic
+3. Посмотреть различия react-router v5 и v6
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Урок 6. Контекст. Компоненты высшего порядка. Знакомство с Redux
+1. Установить redux, react-redux.
+2. Создать редьюсер профиля. Подключить страницу профиля к redux.
+3. Добавить на странице профиля чекбокс и сохранение его состояния в сторе.
+4. Добавить на странице инпут с кнопкой для изменения имени профиля
+5. Установить и настроить redux devtools.
+ДОПОЛНЕНИЕ
+1. Покрываем тестами redux 
+2. прочитать про связку context + useReducer 
+3. Сделан аналог на этой связке **
+4. тесты, coverage, хроматик
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Урок 7. Погружение в react-redux
+1.  Повторить всё, что было на уроке
+ДОПОЛНЕНИЕ
+1. Почитать про reselect и redux/tookkit
+2. Gереписать наш redux на redux/toolkit
+3. Попробовать связку context + useReducer
 
-### `npm test`
+Урок 8. Redux middlewares. Redux-persist.
+1. Установить и подключить к стору redux-thunk.
+2. Перенести в миддлвар логику ответа робота.
+3. Разделить, где имеет смысл, компоненты на контейнеры и презентационные.
+4. Установить и настроить redux-persist.
+5. * Использовать в качестве миддлвара redux-saga
+ДОПОЛНЕНИЕ
+1. Переписать message на библиотеку redux/toolkit
+2. Перенести thunk на createAsyncThunk
+3. storybook, tests, loki, coverage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Урок 9. Работа с API
+1. Повторить, всё что было сделано на уроке
+ДОПОЛНЕНИЕ
+1. Перенести логику работы api в middleware redux/toolkit
+2. Не забываем про тесты и storybook
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Урок 10. Знакомство с Firebase
+1. Создать проект в консоли firebase. Установить и настроить в приложении firebase SDK. 
+2. Добавить аутентификацию через firebase (email/password). 
+3. Добавить отправку, хранение, получение сообщений и чатов через Realtime Database.
+4. *Добавить в Realtime DB раздел profile. Сохранять в нем данные о профиле пользователя. Рядом с текстом сообщения пользователя отображать его имя или сохраненное пользователем имя.
+ДОПОЛНЕНИЕ
+1. Типизировать код 
+2. Перенести всю логику работы с firebase в мидлвары 
+3. Сделать доступность профиля только для нашего пользователя
