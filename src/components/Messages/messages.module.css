@@ -1,0 +1,6 @@
+.block {
+    height: 60vh;
+    min-height: 60vh;
+    overflow: auto;
+    background-color: aliceblue;
+}

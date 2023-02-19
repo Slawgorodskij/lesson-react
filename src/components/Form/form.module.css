@@ -1,0 +1,29 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 10vh;
+    width: 90vw;
+    background-color: beige;
+    border-top: 1px solid #282c34;
+
+}
+
+.form__input {
+    padding: 1rem;
+    margin-bottom: 15px;
+    height: 3rem;
+    font-size: 14px;
+    border-radius: 0.3rem;
+}
+
+.form__button {
+    padding: 1rem;
+    background-color: aqua;
+    border-radius: 0.3rem;
+}
+
+.form__button:hover {
+    background-color: #36acac;
+}
