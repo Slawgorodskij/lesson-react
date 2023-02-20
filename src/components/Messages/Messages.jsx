@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './messages.module.css';
 
-const Messages = ({ messages }) => {
+export const Messages = ({ messages }) => {
   return (
     <div className={style.block}>
       {messages.map((item) => {
@@ -16,5 +16,3 @@ const Messages = ({ messages }) => {
     </div>
   );
 };
-
-export default Messages;
