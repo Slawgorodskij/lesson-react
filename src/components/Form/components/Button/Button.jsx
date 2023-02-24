@@ -2,7 +2,11 @@ import style from './button.module.css';
 
 export const Button = ({ label, disabled }) => {
   return (
-    <button disabled={disabled} className={style.button}>
+    <button
+        disabled={disabled}
+        className={style.button}
+        data-testid={'button'}
+    >
       {label}
     </button>
   );

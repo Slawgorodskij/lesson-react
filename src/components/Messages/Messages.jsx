@@ -6,7 +6,7 @@ export const Messages = ({ messages }) => {
     <div className={style.block}>
       {messages.map((item) => {
         return (
-          <div key={item.id}>
+          <div key={item.id} data-testid={'blockMessage'}>
             <p>
               <span>{item.author}</span> {item.text}
             </p>

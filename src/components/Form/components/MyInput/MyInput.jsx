@@ -8,6 +8,7 @@ export const MyInput = ({ value, placeholder, textChange }) => {
       value={value}
       placeholder={placeholder}
       onChange={textChange}
+      data-testid={'input'}
     />
   );
 };
