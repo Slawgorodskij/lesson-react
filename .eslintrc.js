@@ -1,8 +1,9 @@
 module.exports = {
     env: {
         browser: true,
-        node: true,
         es6: true,
+        jest: true,
+        node: true,
     },
     extends: [
         'prettier',
@@ -11,6 +12,14 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:storybook/recommended',
+    ],
+    overrides: [
+        {
+            files: ['webpack.config.js'],
+            rules: {
+                '@typescript-eslint/no-var-requires': ['off'],
+            },
+        },
     ],
     parserOptions: {
         ecmaFeatures: {
@@ -21,27 +30,19 @@ module.exports = {
     },
     plugins: ['react', 'prettier', 'react-hooks', 'jest'],
     rules: {
+        'react/react-in-jsx-scope': 'off',
+        'linebreak-style': ['error', 'unix'],
         'prettier/prettier': [
             'error',
             {
                 singleQuote: true,
             },
         ],
-        'react/prop-types': 0,
-        'linebreak-style': ['error', 'unix'],
         quotes: ['warn', 'single'],
-        semi: ['warn', 'always'],
-        'react/react-in-jsx-scope': 'off',
         'react/display-name': 'off',
+        'react/prop-types': 0,
+        semi: ['warn', 'always'],
     },
-    overrides: [
-        {
-            files: ['webpack.config.js'],
-            rules: {
-                '@typescript-eslint/no-var-requires': ['off'],
-            },
-        },
-    ],
     settings: {
         react: {
             version: 'detect',

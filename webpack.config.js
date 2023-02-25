@@ -115,5 +115,11 @@ module.exports = {
       svg: path.resolve(__dirname, 'src/assets/svg'),
     },
     extensions: ['.jsx', '.js'],
+    modules: [
+      'node_modules',
+      'bower_components',
+      'shared',
+      '/shared/vendor/modules',
+    ],
   },
 };

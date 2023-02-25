@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './form.module.css';
-import { AUTHOR } from 'src/constans';
+// import { AUTHOR } from './src/constans';
 import { Button } from './components/Button';
 import { MyInput } from './components/MyInput';
 
@@ -16,7 +16,7 @@ export const Form = ({ addMessage }) => {
     if (text !== '') {
       addMessage({
         id: Date.now(),
-        author: AUTHOR.user,
+        author: 'user',
         text: text,
       });
       setText(() => '');

@@ -1,10 +1,9 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Form } from 'components/Form';
-import { Messages } from 'components/Messages';
-import { AUTHOR } from 'src/constans';
+import { Form } from './components/Form';
+import { Messages } from './components/Messages';
 
-function App() {
+export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const addMessage = (newMessage) => {
     setMessageList((prevMessage) => [...prevMessage, newMessage]);
@@ -12,12 +11,12 @@ function App() {
   useEffect(() => {
     let lastMessage = messageList[messageList.length - 1];
 
-    if (lastMessage && lastMessage.author !== AUTHOR.bot) {
+    if (lastMessage && lastMessage.author !== 'bot') {
       const timeout = setTimeout(() => {
         addMessage({
           id: Date.now(),
           text: `${lastMessage.author} написал новое сообщение`,
-          author: AUTHOR.bot,
+          author: 'bot',
         });
       }, 1500);
       return () => clearTimeout(timeout);
@@ -29,6 +28,4 @@ function App() {
       <Form addMessage={addMessage} />
     </div>
   );
-}
-
-export default App;
+};
