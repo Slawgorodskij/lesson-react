@@ -3,7 +3,7 @@ import style from './myInput.module.css';
 export const MyInput = ({ value, placeholder, textChange }) => {
   return (
     <input
-      className={style.input}
+      className={style.my_input}
       type="text"
       value={value}
       placeholder={placeholder}
