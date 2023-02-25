@@ -20,5 +20,6 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  disabled: true,
   label: 'Button',
 };
