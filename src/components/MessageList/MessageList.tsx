@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { List, ListItem } from '@material-ui/core';
+import style from './messages.module.scss';
 import { Messages } from 'src/types';
 
 interface MessageListProps {
@@ -8,7 +9,7 @@ interface MessageListProps {
 
 export const MessageList: FC<MessageListProps> = ({ messages }) => {
   return (
-    <List>
+    <List className={style.block}>
       {messages.map((item) => {
         return (
           <ListItem key={item.id} data-testid={'blockMessage'}>

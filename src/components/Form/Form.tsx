@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import style from './Form.module.scss';
-import { Button } from './components/Button';
+import { Button } from 'src/componentsUI/Button';
 import { Message, AUTHOR } from 'src/types';
 import TextField from '@material-ui/core/TextField';
 

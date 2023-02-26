@@ -109,3 +109,4 @@
 2. Перенести всю логику работы с firebase в мидлвары 
 3. Сделать доступность профиля только для нашего пользователя
 
+![Sanity check](https://github.com/Slawgorodskij/lesson-react/actions/workflows/sanity-check.yml/badge.svg)
