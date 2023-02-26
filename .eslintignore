@@ -1,0 +1,8 @@
+.history
+.idea
+node_modules
+coverage
+reports
+storybook-static
+#dist
+#build

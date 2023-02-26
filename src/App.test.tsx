@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { App } from './App.jsx';
+import { App } from './App';
 import '@testing-library/jest-dom';
 
 describe('App', () => {
@@ -28,7 +28,7 @@ describe('App', () => {
     fireEvent.click(button);
 
     expect(
-      await screen.findByText(/user написал новое сообщение/, undefined, {
+      await screen.findByText(/USER написал новое сообщение/, undefined, {
         timeout: 1600,
       })
     ).toBeInTheDocument();

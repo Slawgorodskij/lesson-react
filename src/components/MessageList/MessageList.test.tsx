@@ -1,49 +1,51 @@
 import { render, screen } from '@testing-library/react';
-import { Messages } from './Messages.jsx';
+import { MessageList } from './MessageList';
 import '@testing-library/jest-dom';
+import { AUTHOR } from 'src/types';
 
 describe('Messages', () => {
   const messagesArray = [
     {
       id: 123456,
-      author: 'user',
+      author: AUTHOR.USER,
       text: 'test',
     },
     {
       id: 1234566,
-      author: 'user',
+      author: AUTHOR.USER,
       text: 'test2',
     },
     {
       id: 1234567,
-      author: 'user',
+      author: AUTHOR.USER,
       text: 'test3',
     },
   ];
+
   it('render component', () => {
-    render(<Messages messages={[]} />);
+    render(<MessageList messages={[]} />);
     screen.debug();
   });
 
   it('message is empty', () => {
-    render(<Messages messages={[]} />);
+    render(<MessageList messages={[]} />);
     expect(screen.queryAllByTestId('blockMessage').length).toBe(0);
   });
 
   it('message length 3', () => {
-    render(<Messages messages={messagesArray} />);
+    render(<MessageList messages={messagesArray} />);
     expect(screen.queryAllByTestId('blockMessage').length).toBe(3);
   });
   it('render message', () => {
-    render(<Messages messages={messagesArray} />);
+    render(<MessageList messages={messagesArray} />);
     expect(screen.queryAllByTestId('blockMessage')[0].innerHTML).toBe(
-      '<p><span>user</span> test</p>'
+      'USER : test'
     );
     expect(screen.queryAllByTestId('blockMessage')[1].innerHTML).toBe(
-      '<p><span>user</span> test2</p>'
+      'USER : test2'
     );
     expect(screen.queryAllByTestId('blockMessage')[2].innerHTML).toBe(
-      '<p><span>user</span> test3</p>'
+      'USER : test3'
     );
   });
 });
