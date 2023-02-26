@@ -28,4 +28,4 @@ jobs:
         with:
           message: |
             You can check this code in chromatic with the link
-            https://www.chromatic.com/builds?appId=${{ secrets.CHROMATIC_PROJECT_ID }}
+            https://www.chromatic.com/builds?appId=63fb0ba4bcdd56d77db3f14b
