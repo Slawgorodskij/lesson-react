@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from './Button.jsx';
+import { Button } from './Button';
 import '@testing-library/jest-dom';
 
 describe('Button', () => {
@@ -34,6 +34,6 @@ describe('Button', () => {
   it('button is disabled', () => {
     render(<Button label={'TEST'} disabled />);
 
-    expect(screen.getByText(/TEST/)).toBeDisabled();
+    expect(screen.getByTestId('button')).toBeDisabled();
   });
 });
